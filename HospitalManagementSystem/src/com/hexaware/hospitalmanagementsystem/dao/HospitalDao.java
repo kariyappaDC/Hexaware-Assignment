@@ -175,7 +175,8 @@ public class HospitalDao implements IHospitalDao{
 
 	    String deleteQuery = "DELETE FROM Appointment WHERE appointmentId = ?"; 
 
-	    try (PreparedStatement pstmt = conn.prepareStatement(deleteQuery)) {
+	    try  {
+		    PreparedStatement pstmt = conn.prepareStatement(deleteQuery);
 	        pstmt.setInt(1, appointmentId);
 	        
 	        int rowsAffected = pstmt.executeUpdate(); 
